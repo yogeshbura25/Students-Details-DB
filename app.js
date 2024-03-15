@@ -145,7 +145,7 @@ app.post("/NewStudentDetails/", async (request, response) => {
 });
 
 //Update Student Details
-app.put("/UpdateStudentDetails/", async (request, response) => {
+app.put("/UpdateStudentDetails/:studentID/", async (request, response) => {
     const { studentID } = request.params;
     const { StudentName, Gender, Age, Branch, Rank, PhoneNumber } = request.body;
     const updateStudentQuery = `
