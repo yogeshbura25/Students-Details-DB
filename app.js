@@ -164,7 +164,7 @@ app.put("/UpdateStudentDetails/:studentID/", async (request, response) => {
     response.send("Student Upadted Sucessfully");
 });
 
-//Deleting Student Details
+//Deleting Student Based on Details
 app.delete("/DeleteStudentDetails/:studentID", async (request, response) => {
     const { studentID } = request.params;
     const deleteStudentDetails = `
@@ -173,6 +173,71 @@ app.delete("/DeleteStudentDetails/:studentID", async (request, response) => {
     student_db
     WHERE
     id = ${studentID};`;
+    await db.run(deleteStudentDetails);
+    response.send("Student Details Successfully Deteled");
+});
+
+//Deleting Student Based on student_name
+app.delete("/DeleteStudentDetails/name/:name/", async (request, response) => {
+    const { name } = request.params;
+    const deleteStudentDetails = `
+    DELETE
+    FROM
+    student_db
+    WHERE
+    student_name= "${name}";`;
+    await db.run(deleteStudentDetails);
+    response.send("Student Details Successfully Deteled");
+});
+
+//Deleting Student Details Based on gender
+app.delete("/DeleteStudentDetails/gender/:gender/", async (request, response) => {
+    const { gender } = request.params;
+    const deleteStudentDetails = `
+    DELETE
+    FROM
+    student_db
+    WHERE
+    gender = "${gender}";`;
+    await db.run(deleteStudentDetails);
+    response.send("Student Details Successfully Deteled");
+});
+
+//Deleting student Details Based on age
+app.delete("/DeleteStudentDetails/age/:age/", async (request, response) => {
+    const { age } = request.params;
+    const deleteStudentDetails = `
+    DELETE
+    FROM
+    student_db
+    WHERE
+    age = ${age};`;
+    await db.run(deleteStudentDetails);
+    response.send("Student Details Successfully Deteled");
+});
+
+//Deleting Student Details Based on branch
+app.delete("/DeleteStudentDetails/branch/:branch/", async (request, response) => {
+    const { branch } = request.params;
+    const deleteStudentDetails = `
+    DELETE
+    FROM
+    student_db
+    WHERE
+    branch= "${branch}";`;
+    await db.run(deleteStudentDetails);
+    response.send("Student Details Successfully Deteled");
+});
+
+//Deleting student Based on Ranks
+app.delete("/DeleteStudentDetails/rank/:rank/", async (request, response) => {
+    const { rank } = request.params;
+    const deleteStudentDetails = `
+    DELETE
+    FROM
+    student_db
+    WHERE
+    rank = ${rank};`;
     await db.run(deleteStudentDetails);
     response.send("Student Details Successfully Deteled");
 });
