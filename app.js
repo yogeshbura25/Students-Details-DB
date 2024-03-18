@@ -125,6 +125,20 @@ app.get("/studentDetails/rank/:rank", async (request, response) => {
     response.send(selectRankQuery);
 });
 
+//Get student Details through phonenumber
+app.get("/studentDetails/phoneNumber/:phoneNumber", async (request, response) => {
+    const { phoneNumber } = request.params;
+    const getRankQuery = `
+    SELECT
+    *
+    FROM
+    student_db
+    WHERE 
+    phone_number = ${phoneNumber};`;
+    const selectRankQuery = await db.all(getRankQuery);
+    response.send(selectRankQuery);
+});
+
 //Post New Student Details In Student_db
 app.post("/NewStudentDetails/", async (request, response) => {
     const { ID, StudentName, Gender, Age, Branch, Rank, PhoneNumber } = request.body;
@@ -144,20 +158,90 @@ app.post("/NewStudentDetails/", async (request, response) => {
     response.send("Successfully Added New Students");
 });
 
-//Update Student Details
+//Update Student Name
 app.put("/UpdateStudentDetails/:studentID/", async (request, response) => {
     const { studentID } = request.params;
-    const { StudentName, Gender, Age, Branch, Rank, PhoneNumber } = request.body;
+    const { StudentName } = request.body;
     const updateStudentQuery = `
     UPDATE
     student_db
     SET
-        student_name = "${StudentName}",
-        gender = "${Gender}",
-        age = ${Age},
-        branch = "${Branch}",
-        rank = ${Rank},
-        phone_number = ${PhoneNumber}
+    student_name = "${StudentName}",
+    WHERE 
+    id = ${studentID};`;
+    await db.run(updateStudentQuery);
+    response.send("Student Upadted Sucessfully");
+});
+
+//update student gender
+app.put("/UpdateStudentDetails/gender/:gender/", async (request, response) => {
+    const { studentID } = request.params;
+    const { gender } = request.body;
+    const updateStudentQuery = `
+    UPDATE
+    student_db
+    SET
+    gender = "${gender}",
+    WHERE 
+    id = ${studentID};`;
+    await db.run(updateStudentQuery);
+    response.send("Student Upadted Sucessfully");
+});
+
+//update student age
+app.put("/UpdateStudentDetails/age/:age/", async (request, response) => {
+    const { studentID } = request.params;
+    const { age } = request.body;
+    const updateStudentQuery = `
+    UPDATE
+    student_db
+    SET
+    age = ${age},
+    WHERE 
+    id = ${studentID};`;
+    await db.run(updateStudentQuery);
+    response.send("Student Upadted Sucessfully");
+});
+
+//update student branch
+app.put("/UpdateStudentDetails/branch/:branch/", async (request, response) => {
+    const { studentID } = request.params;
+    const { branch } = request.body;
+    const updateStudentQuery = `
+    UPDATE
+    student_db
+    SET
+    branch = "${branch}",
+    WHERE 
+    id = ${studentID};`;
+    await db.run(updateStudentQuery);
+    response.send("Student Upadted Sucessfully");
+});
+
+//update student rank
+app.put("/UpdateStudentDetails/rank/:rank/", async (request, response) => {
+    const { studentID } = request.params;
+    const { rank } = request.body;
+    const updateStudentQuery = `
+    UPDATE
+    student_db
+    SET
+    rank = ${rank},
+    WHERE 
+    id = ${studentID};`;
+    await db.run(updateStudentQuery);
+    response.send("Student Upadted Sucessfully");
+});
+
+//update student phone_number
+app.put("/UpdateStudentDetails/phoneNumber/:phoneNumber/", async (request, response) => {
+    const { studentID } = request.params;
+    const { PhoneNumber } = request.body;
+    const updateStudentQuery = `
+    UPDATE
+    student_db
+    SET
+    phone_number = ${PhoneNumber},
     WHERE 
     id = ${studentID};`;
     await db.run(updateStudentQuery);
