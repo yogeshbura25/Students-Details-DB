@@ -325,3 +325,4 @@ app.delete("/DeleteStudentDetails/rank/:rank/", async (request, response) => {
     await db.run(deleteStudentDetails);
     response.send("Student Details Successfully Deteled");
 });
+
