@@ -50,7 +50,7 @@ app.get("/studentDetails/:studentID/", async (request, response) => {
     student_db
     WHERE 
     id = ${studentID};`;
-    const selectIDQuery = await db.get(getStudentDetails);
+    const selectIDQuery = await db.all(getStudentDetails);
     response.send(selectIDQuery); 
 });
 
