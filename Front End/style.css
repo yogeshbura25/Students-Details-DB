@@ -47,3 +47,36 @@ input {
     padding: 2px;
 }
  
+.getpage-container {
+    display: flex;
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+.left-content {
+    height: 100%;
+    width: 30vw;
+}
+
+.right-content {
+    height: 100vh;
+    width: 70vw;
+    overflow-y: auto;
+    position: relative;
+}
+
+.post-page {
+    height: 100vh;
+    background-color: blanchedalmond;
+}
+
+.containers {
+    height: 100vh;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+

@@ -20,48 +20,83 @@
             <a class="links">Delete Student Details</a>
         </div>
     </div>
-    <!--GetPage--> 
- 
-      <div class="container-fluid" id="getstudent">
-        <div class="row">
-          <div class="col-lg-4 bg-body-secondary p-5 d-flex flex-column justify-content-center vh-100">
-            <div>
-              <label for="studentID">Student ID:</label> <br>
-              <input type="number" id="studentID"/>
-              <button class="btn btn-danger m-1" onclick="studentID()">Click</button>
-            </div>
-            <div>
-              <label for="name">Student Name:</label> <br>
-              <input type="text" id="name"/>
-              <button class="btn btn-danger m-1" onclick="studentName()">Click</button>
-            </div>
-            <div>
-              <label for="gender">Student Gender:</label> <br>
-              <input type="text" id="gender"/>
-              <button class="btn btn-danger m-1" onclick="studentGender()">Click</button>
-            </div>
-            <div>
-              <label for="age">Student Age:</label> <br>
-              <input type="number" id="age"/>
-              <button class="btn btn-danger m-1" onclick="studentAge()">Click</button>
-            </div>
-            <div>
-              <label for="branch">Student Branch:</label> <br>
-              <input type="text" id="branch"/>
-              <button class="btn btn-danger m-1" onclick="studentBranch()">Click</button>
-            </div>
-            <div>
-              <label for="rank">Student rank:</label> <br>
-              <input type="number" id="rank"/>
-              <button class="btn btn-danger m-1" onclick="studentRank()">Click</button>
-            </div>
-          </div>
-          <div class="col-lg-8 bg-body-tertiary">
-            <div id="getStudentDetails" class="d-flex flex-wrap justify-content-center align-items-center"></div>
-          </div>
-        </div>
-      </div>
-      
+    <!--GetPage-->
+<div class="getpage-container">
+  <div class="bg-body-secondary p-5 d-flex flex-column justify-content-center left-content">
+    <div>
+      <label for="studentID">Student ID:</label> <br>
+      <input type="number" id="studentID"/>
+      <button class="btn btn-danger m-1" onclick="studentID()">Click</button>
+    </div>
+    <div>
+      <label for="name">Student Name:</label> <br>
+      <input type="text" id="name"/>
+      <button class="btn btn-danger m-1" onclick="studentName()">Click</button>
+    </div>
+    <div>
+      <label for="gender">Student Gender:</label> <br>
+      <input type="text" id="gender"/>
+      <button class="btn btn-danger m-1" onclick="studentGender()">Click</button>
+    </div>
+    <div>
+      <label for="age">Student Age:</label> <br>
+      <input type="number" id="age"/>
+      <button class="btn btn-danger m-1" onclick="studentAge()">Click</button>
+    </div>
+    <div>
+      <label for="branch">Student Branch:</label> <br>
+      <input type="text" id="branch"/>
+      <button class="btn btn-danger m-1" onclick="studentBranch()">Click</button>
+    </div>
+    <div>
+      <label for="rank">Student rank:</label> <br>
+      <input type="number" id="rank"/>
+      <button class="btn btn-danger m-1" onclick="studentRank()">Click</button>
+    </div>
+  </div>
+  <div class="bg-body-tertiary right-content">
+    <div id="getStudentDetails" class="d-flex flex-wrap justify-content-center align-items-center"></div>
+  </div>
+</div>
+
+<div class="post-page">
+  <form id="NewStudentForm" action="/NewStudentDetails/" method="post">
+    <label for="postID">ID:</label><br>
+    <input type="text" id="postID" name="postID" required><br>
+
+    <label for="posttName">Student Name:</label><br>
+    <input type="text" id="postName" name="postName" required><br>
+
+    <label for="postGender">Gender:</label><br>
+    <input type="text" id="postGender" name="postGender" required><br>
+
+    <label for="postAge">Age:</label><br>
+    <input type="number" id="postAge" name="postAge" required><br>
+
+    <label for="postBranch">Branch:</label><br>
+    <input type="text" id="postBranch" name="postBranch" required><br>
+
+    <label for="postRank">Rank:</label><br>
+    <input type="number" id="postRank" name="postRank" required><br>
+
+    <label for="postPhoneNumber">Phone Number:</label><br>
+    <input type="text" id="postPhoneNumber" name="postPhoneNumber" required><br><br>
+
+    <input type="submit" value="Submit">
+</form>
+<div id="responseMessage"></div>
+</div>
+
+
+  <div class="containers">
+    <div>
+      <label for="deleteID">Enter Student ID:</label>
+    <input class="m-3" type="text" id="deleteID" name="deleteID" required>
+    <button class="btn btn-danger" onclick="deleteStudent()">Delete</button> <br>
+    </div>
+    <div id="responseMessageDeleted"></div>
+  </div>
+
   </body>
 </html>
 
