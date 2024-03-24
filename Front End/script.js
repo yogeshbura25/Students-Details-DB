@@ -61,47 +61,50 @@ async function displayData(data) {
         const student_rank = document.getElementById("rank").value;
         await fetchData(`http://localhost:3000/studentDetails/rank/${student_rank}`, "No rank Student Found in list");
     }
-
-    document.getElementById('NewStudentForm').addEventListener('submit', async function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
+   
+    /*
+    async function fetchData(url, errorMessage) {
         try {
-            const response = await fetch('http://localhost:3000/NewStudentDetails/', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(Object.fromEntries(formData)), 
-            });
-            if (!response.ok) {
-                throw new Error('Failed to add student details');
-            }
-            const responseData = await response.text();
-            document.getElementById('responseMessage').textContent = responseData;
-        } catch (error) {
-            console.error('Error:', error);
-            document.getElementById('responseMessage').textContent = 'An error occurred: ' + error.message;
-        }
-    });
-
-
-
-    async function deleteStudent() {
-        const deleteID = document.getElementById('deleteID').value;
-    
-        try {
-            const response = await fetch(`http://localhost:3000/DeleteStudentDetails/${deleteID}`, {
+            const response = await fetch(url,{
                 method: 'DELETE'
             });
-    
             if (!response.ok) {
-                throw new Error('Failed to delete student details');
+                throw new Error('Network response was not ok');
             }
-    
-            const responseData = await response.text();
-            document.getElementById('responseMessageDeleted').textContent = responseData;
+            const data = await response.json();
+            displayData(data);
         } catch (error) {
-            console.error('Error deleting student:', error);
-            document.getElementById('responseMessageDeleted').textContent = 'An error occurred: ' + error.message;
+            console.error('Error fetching data:', error);
+            alert(errorMessage);
         }
     }
+
+    async function deleteStudentID() {
+        const deleteID = document.getElementById('deleteID').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/${deleteID}`)
+    }
+
+    async function deleteName() {
+        const name = document.getElementById('deleteName').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/name/${name}`)
+    }
+
+    async function deleteGender() {
+        const gender = document.getElementById('deleteGender').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/gender/${gender}`)
+    }
+
+    async function deleteAge() {
+        const age = document.getElementById('deleteAge').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/age/${age}`)
+    }
+
+    async function deleteBranch() {
+        const branch = document.getElementById('deleteBranch').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/branch/${branch}`)
+    }
+
+    async function deleteRank() {
+        const rank = document.getElementById('deleteRank').value;
+        await fetch(`http://localhost:3000/DeleteStudentDetails/rank/${rank}`)
+    } */

@@ -66,17 +66,22 @@ input {
 }
 
 .post-page {
-    height: 100vh;
     background-color: blanchedalmond;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .containers {
     height: 100vh;
     background-color: burlywood;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
-
+input[type="submit"] {
+    margin: 5px 0px 0px 150px;
+    background-color: green;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    border: none;
+}

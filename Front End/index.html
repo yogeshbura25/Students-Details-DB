@@ -15,13 +15,13 @@
         <h1 class="title">STUDENT DASHBOARD</h1>
         <div>
             <a class="links" href="#getstudent">Get Student Details</a>
-            <a class="links">Post Student Details</a>
-            <a class="links">Update Student Details</a>
-            <a class="links">Delete Student Details</a>
+            <a class="links" href="#poststudent">Post Student Details</a>
+            <a class="links" href="#updatestudent">Update Student Details</a>
+            <a class="links" href="#deletestudent">Delete Student Details</a>
         </div>
     </div>
     <!--GetPage-->
-<div class="getpage-container">
+<div class="getpage-container" id="getstudent">
   <div class="bg-body-secondary p-5 d-flex flex-column justify-content-center left-content">
     <div>
       <label for="studentID">Student ID:</label> <br>
@@ -59,42 +59,77 @@
   </div>
 </div>
 
-<div class="post-page">
-  <form id="NewStudentForm" action="/NewStudentDetails/" method="post">
-    <label for="postID">ID:</label><br>
-    <input type="text" id="postID" name="postID" required><br>
-
-    <label for="posttName">Student Name:</label><br>
-    <input type="text" id="postName" name="postName" required><br>
-
-    <label for="postGender">Gender:</label><br>
-    <input type="text" id="postGender" name="postGender" required><br>
-
-    <label for="postAge">Age:</label><br>
-    <input type="number" id="postAge" name="postAge" required><br>
-
-    <label for="postBranch">Branch:</label><br>
-    <input type="text" id="postBranch" name="postBranch" required><br>
-
-    <label for="postRank">Rank:</label><br>
-    <input type="number" id="postRank" name="postRank" required><br>
-
-    <label for="postPhoneNumber">Phone Number:</label><br>
-    <input type="text" id="postPhoneNumber" name="postPhoneNumber" required><br><br>
-
-    <input type="submit" value="Submit">
-</form>
-<div id="responseMessage"></div>
+<div class="post-page" id="poststudent">
+   <form class=" p-5 d-flex flex-column justify-content-center">
+    <div>
+      <label for="studentID">Student ID:</label> <br>
+      <input type="number" id="studentID" name="ID" required>
+    </div>
+    <div>
+      <label for="studentName">Student Name:</label> <br>
+      <input type="text" id="studentName" name="Name" required>
+    </div>
+    <div>
+      <label for="studentGender">Student Gender:</label> <br>
+      <input type="text" id="studentGender" name="Gender" required>
+    </div>
+    <div>
+      <label for="studentAge">Student Age:</label> <br>
+      <input type="number" id="studentAge" name="Age" required>
+    </div>
+    <div>
+      <label for="studentBranch">Student Branch:</label> <br>
+      <input type="text" id="studentBranch" name="Branch" required>
+    </div>
+    <div>
+      <label for="studentRank">Student Rank:</label> <br>
+      <input type="number" id="studentRank" name="Rank" required>
+    </div>
+    <div>
+      <label for="studentPhoneNo">Student Phone Number:</label> <br>
+      <input type="text" id="studentphone" name="phoneNo" required>
+    </div>
+    <div>
+      <input type="submit" value="submit">
+    </div>
+   </form>
 </div>
 
 
-  <div class="containers">
-    <div>
-      <label for="deleteID">Enter Student ID:</label>
-    <input class="m-3" type="text" id="deleteID" name="deleteID" required>
-    <button class="btn btn-danger" onclick="deleteStudent()">Delete</button> <br>
+  <div class="containers" id="deletestudent">
+    <div class="p-5 d-flex flex-column justify-content-center left-content">
+      <div>
+        <label for="deleteID">Enter Student ID:</label> <br>
+        <input  type="number" id="deleteID" name="deleteID" required>
+        <button class="btn btn-danger m-1" onclick="deleteStudentID()">Delete</button>
+       </div>
+       <div>
+         <label for="deleteName">Enter Student Name:</label> <br>
+         <input type="text" id="deleteName" name="deleteName" required>
+         <button class="btn btn-danger m-1" onclick="deleteName()">Delete</button> <br>
+        </div>
+        <div>
+         <label for="deleteGender">Enter Student Gender:</label> <br>
+         <input type="text" id="deleteGender" name="deleteGender" required>
+         <button class="btn btn-danger m-1" onclick="deleteGender()">Delete</button> <br>
+        </div>
+        <div>
+         <label for="deleteAge">Enter Student Age:</label> <br>
+         <input type="number" id="deleteAge" name="deleteAge" required>
+         <button class="btn btn-danger m-1" onclick="deleteAge()">Delete</button> <br>
+        </div>
+        <div>
+         <label for="deleteBranch">Enter Student Branch:</label> <br>
+         <input type="text" id="deleteBranch" name="deleteBranch" required>
+         <button class="btn btn-danger m-1" onclick="deleteBranch()">Delete</button> <br>
+        </div>
+        <div>
+         <label for="deleteRank">Enter Student Rank:</label> <br>
+         <input type="number" id="deleteRank" name="deleteRank" required>
+         <button class="btn btn-danger m-1" onclick="deleteRank()">Delete</button>
+        </div>
+        <div id="responseMessageDeleted"></div>
     </div>
-    <div id="responseMessageDeleted"></div>
   </div>
 
   </body>
