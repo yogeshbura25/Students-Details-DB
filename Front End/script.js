@@ -62,7 +62,7 @@ async function displayData(data) {
         await fetchData(`http://localhost:3000/studentDetails/rank/${student_rank}`, "No rank Student Found in list");
     }
    
-    /*
+    
     async function fetchData(url, errorMessage) {
         try {
             const response = await fetch(url,{
@@ -86,25 +86,25 @@ async function displayData(data) {
 
     async function deleteName() {
         const name = document.getElementById('deleteName').value;
-        await fetch(`http://localhost:3000/DeleteStudentDetails/name/${name}`)
+        await fetch(`http://localhost:3000/DeleteStudentDetails/name/${name}/`)
     }
 
     async function deleteGender() {
         const gender = document.getElementById('deleteGender').value;
-        await fetch(`http://localhost:3000/DeleteStudentDetails/gender/${gender}`)
+        await fetch(`http://localhost:3000/DeleteStudentDetails/gender/${gender}/`)
     }
 
     async function deleteAge() {
         const age = document.getElementById('deleteAge').value;
-        await fetch(`http://localhost:3000/DeleteStudentDetails/age/${age}`)
+        await fetch(`http://localhost:3000/DeleteStudentDetails/age/${age}/`)
     }
 
     async function deleteBranch() {
         const branch = document.getElementById('deleteBranch').value;
-        await fetch(`http://localhost:3000/DeleteStudentDetails/branch/${branch}`)
+        await fetch(`http://localhost:3000/DeleteStudentDetails/branch/${branch}/`)
     }
 
     async function deleteRank() {
         const rank = document.getElementById('deleteRank').value;
-        await fetch(`http://localhost:3000/DeleteStudentDetails/rank/${rank}`)
-    } */
+        await fetch(`http://localhost:3000/DeleteStudentDetails/rank/${rank}/`)
+    } 
