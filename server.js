@@ -140,7 +140,7 @@ app.get("/studentDetails/phoneNumber/:phoneNumber", async (request, response) =>
 });
 
 //Post New Student Details In Student_db
-app.post("/NewStudentDetails/", async (request, response) => {
+app.post("/NewStudentDetails/post/", async (request, response) => {
     const { ID, StudentName, Gender, Age, Branch, Rank, PhoneNumber } = request.body;
     const AddStudentDetails = `
     INSERT INTO

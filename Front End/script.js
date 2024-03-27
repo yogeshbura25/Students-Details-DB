@@ -112,3 +112,28 @@ async function displayData(data) {
         await deleteStudentDetails("rank", rank);
     }
     
+    const newStudentForm = document.getElementById('newStudentForm');
+
+    newStudentForm.addEventListener('submit', async function(event) {
+        event.preventDefault();
+    
+        const formData = new FormData(event.target);
+    
+        try {
+            const response = await fetch('http://localhost:3000/NewStudentDetails/post/', {
+                method: 'POST',
+                body: formData, // Send FormData object directly
+            });
+    
+            if (!response.ok) {
+                throw new Error('Failed to add student details');
+            }
+    
+            const responseData = await response.json();
+            document.getElementById('responseMessage').textContent = responseData;
+        } catch (error) {
+            console.error('Error:', error);
+            document.getElementById('responseMessage').textContent = 'An error occurred: ' + error.message;
+        }
+    });
+    
