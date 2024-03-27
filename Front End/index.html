@@ -60,7 +60,7 @@
 </div>
 
 <div class="post-page" id="poststudent">
-   <form class=" p-5 d-flex flex-column justify-content-center">
+   <form class=" p-5 d-flex flex-column justify-content-center" id="newStudentForm" action="/NewStudentDetails/" method="post">
     <div>
       <label for="studentID">Student ID:</label> <br>
       <input type="number" id="studentID" name="ID" required>
@@ -90,11 +90,11 @@
       <input type="text" id="studentphone" name="phoneNo" required>
     </div>
     <div>
-      <input type="submit" value="submit">
+      <input type="submit" value="Submit">
     </div>
+    <div id="responseMessageDeleted"></div>
    </form>
 </div>
-
 
   <div class="containers" id="deletestudent">
     <div class="p-5 d-flex flex-column justify-content-center left-content">

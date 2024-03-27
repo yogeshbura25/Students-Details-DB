@@ -41,7 +41,7 @@ app.get("/studentDetails/", async (request, response) => {
 });
 
 //Get Student Details through id
-app.get("/studentDetails/:studentID/", async (request, response) => {
+app.get("/studentDetails/ID/:studentID/", async (request, response) => {
     const { studentID } = request.params;
     const getStudentDetails = `
     SELECT 
@@ -249,7 +249,7 @@ app.put("/UpdateStudentDetails/phoneNumber/:phoneNumber/", async (request, respo
 });
 
 //Deleting Student Based on Details
-app.delete("/DeleteStudentDetails/:studentID", async (request, response) => {
+app.delete("/DeleteStudentDetails/studentID/:studentID/", async (request, response) => {
     const { studentID } = request.params;
     const deleteStudentDetails = `
     DELETE
