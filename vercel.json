@@ -1,0 +1,17 @@
+{
+    "version": 2,
+    "routes": [
+      { "src": "/studentDetails/ID/:studentID", "dest": "/server.js" },
+      { "src": "/studentDetails/name/:name", "dest": "/server.js" },
+      { "src": "/studentDetails/gender/:gender", "dest": "/server.js" },
+      { "src": "/studentDetails/age/:age", "dest": "/server.js" },
+      { "src": "/studentDetails/branch/:branch", "dest": "/server.js" },
+      { "src": "/studentDetails/rank/:rank", "dest": "/server.js" },
+      { "src": "/studentDetails/phoneNumber/:phoneNumber", "dest": "/server.js" },
+      { "src": "/(.*)", "dest": "/server.js" }
+    ],
+    "builds": [
+      { "src": "server.js", "use": "@vercel/node" }
+    ]
+  }
+  
